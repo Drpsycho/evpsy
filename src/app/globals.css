@@ -3,19 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fff5;
+  --card-background: #ffffff;
+  --foreground: #2c3834;
+  --primary: #7fa892;
+  --primary-dark: #658575;
+  --secondary: #e1e9e5;
+  --secondary-dark: #d0dcd6;
+  --accent: #4a7c63;
+  --accent-dark: #3b634e;
+  --primary-button-text: #ffffff;
+  --secondary-button-text: #2c3834;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #2c3834;
+  --card-background: #364842;
+  --foreground: #f8f9f7;
+  --primary: #7fa892;
+  --primary-dark: #658575;
+  --secondary: #4a7c63;
+  --secondary-dark: #3b634e;
+  --accent: #9cbfae;
+  --accent-dark: #7fa892;
+  --primary-button-text: #ffffff;
+  --secondary-button-text: #ffffff;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.btn-primary {
+  @apply px-6 py-3 rounded-md transition duration-300;
+  background-color: var(--primary);
+  color: var(--primary-button-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-md transition duration-300;
+  background-color: var(--secondary);
+  color: var(--secondary-button-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+  background-color: var(--card-background);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
