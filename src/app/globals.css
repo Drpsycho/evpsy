@@ -3,38 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f1e7;
-  --background-soft: #efe4d2;
-  --card-background: rgba(255, 251, 246, 0.86);
-  --foreground: #3d3129;
-  --muted-foreground: #6d5a4f;
-  --primary: #a57b5b;
-  --primary-dark: #8c6549;
-  --secondary: #eadfce;
-  --secondary-dark: #dbcdb7;
-  --accent: #7b8d75;
-  --accent-dark: #62705d;
+  --background: #f8fff5;
+  --background-soft: #e6f0ea;
+  --card-background: rgba(255, 255, 255, 0.82);
+  --foreground: #2c3834;
+  --muted-foreground: #54665e;
+  --primary: #7fa892;
+  --primary-dark: #658575;
+  --secondary: #e1e9e5;
+  --secondary-dark: #d0dcd6;
+  --accent: #4a7c63;
+  --accent-dark: #3b634e;
   --primary-button-text: #ffffff;
-  --secondary-button-text: #3d3129;
-  --border-soft: rgba(122, 94, 71, 0.16);
-  --shadow-soft: 0 18px 45px rgba(84, 59, 41, 0.08);
+  --secondary-button-text: #2c3834;
+  --border-soft: rgba(74, 124, 99, 0.14);
+  --shadow-soft: 0 18px 45px rgba(74, 124, 99, 0.09);
 }
 
 .dark {
-  --background: #2f251f;
-  --background-soft: #463730;
-  --card-background: rgba(69, 53, 44, 0.82);
-  --foreground: #f5ede3;
-  --muted-foreground: #d8c7ba;
-  --primary: #c89c78;
-  --primary-dark: #b18361;
-  --secondary: #5f4b40;
-  --secondary-dark: #71584b;
-  --accent: #9caf95;
-  --accent-dark: #839377;
+  --background: #2c3834;
+  --background-soft: #3d4f48;
+  --card-background: rgba(54, 72, 66, 0.84);
+  --foreground: #f8f9f7;
+  --muted-foreground: #d2ddd7;
+  --primary: #7fa892;
+  --primary-dark: #658575;
+  --secondary: #4a7c63;
+  --secondary-dark: #3b634e;
+  --accent: #9cbfae;
+  --accent-dark: #7fa892;
   --primary-button-text: #ffffff;
   --secondary-button-text: #ffffff;
-  --border-soft: rgba(240, 220, 204, 0.12);
+  --border-soft: rgba(156, 191, 174, 0.14);
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.22);
 }
 
@@ -47,8 +47,8 @@ body {
   background: var(--background);
   font-family: var(--font-body), sans-serif;
   background-image:
-    radial-gradient(circle at top left, rgba(201, 176, 145, 0.28), transparent 32%),
-    radial-gradient(circle at right 18%, rgba(123, 141, 117, 0.18), transparent 24%),
+    radial-gradient(circle at top left, rgba(127, 168, 146, 0.22), transparent 30%),
+    radial-gradient(circle at right 18%, rgba(225, 233, 229, 0.6), transparent 24%),
     linear-gradient(180deg, var(--background) 0%, color-mix(in srgb, var(--background) 72%, white) 100%);
   min-height: 100vh;
   letter-spacing: -0.01em;
@@ -87,9 +87,9 @@ textarea {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.45), transparent 18%),
-    radial-gradient(circle at 88% 26%, rgba(255, 248, 240, 0.28), transparent 18%);
-  opacity: 0.65;
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.44), transparent 18%),
+    radial-gradient(circle at 88% 26%, rgba(225, 233, 229, 0.34), transparent 18%);
+  opacity: 0.7;
 }
 
 .section-title {
@@ -112,7 +112,7 @@ textarea {
   @apply inline-flex items-center justify-center px-6 py-3 rounded-full transition duration-300;
   background-color: var(--primary);
   color: var(--primary-button-text);
-  box-shadow: 0 14px 28px rgba(140, 101, 73, 0.16);
+  box-shadow: 0 14px 28px rgba(74, 124, 99, 0.16);
 }
 
 .btn-primary:hover {
