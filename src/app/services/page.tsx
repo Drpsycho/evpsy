@@ -55,23 +55,23 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen pt-20 bg-[var(--background)]">
-      <main className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-[var(--foreground)] mb-6">Услуги</h1>
-          <p className="text-xl text-[var(--foreground)] opacity-80 max-w-2xl mx-auto">
+    <div className="page-shell min-h-screen pt-24">
+      <main className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h1 className="section-title mb-6">Услуги</h1>
+          <p className="section-lead mx-auto max-w-2xl">
             Форматы работы, которые помогают бережно разобраться в запросе и подобрать подходящий способ поддержки
           </p>
-          <p className="text-base text-[var(--foreground)] opacity-70 max-w-2xl mx-auto mt-4">
+          <p className="text-muted mx-auto mt-4 max-w-2xl text-base leading-7">
             В индивидуальной работе основной подход - когнитивно-поведенческая терапия с опорой на ясные цели, наблюдение за мыслями, эмоциями и поведенческими паттернами.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-[var(--card-background)] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.02]"
+              className="card overflow-hidden transition-transform hover:translate-y-[-3px]"
             >
               <div className="relative w-full h-[300px]">
                 <Image
@@ -84,15 +84,15 @@ export default function Services() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-3">
+                <h3 className="font-heading mb-3 text-3xl leading-tight text-[var(--foreground)]">
                   {service.title}
                 </h3>
-                <p className="text-[var(--foreground)] opacity-80 mb-4">
+                <p className="text-muted mb-5 leading-7">
                   {service.description}
                 </p>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between gap-4">
                   <div className="space-y-1">
-                    <p className="text-sm text-[var(--foreground)] opacity-70">
+                    <p className="text-muted text-sm">
                       Длительность: {service.duration}
                     </p>
                     <p className="text-lg font-semibold text-[var(--primary)]">

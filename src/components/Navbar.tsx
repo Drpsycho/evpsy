@@ -2,27 +2,33 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   return (
-    <nav className="bg-[var(--card-background)]/90 backdrop-blur-sm fixed w-full z-20 top-0 start-0 border-b border-[var(--primary)]/20">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link href="/" className="flex items-center space-x-3">
-          <span className="self-center text-2xl font-semibold text-[var(--foreground)]">
-            Евгения Харисова
-          </span>
-        </Link>
+    <nav className="fixed top-0 start-0 z-20 w-full border-b border-[var(--border-soft)] bg-[var(--card-background)]/78 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <div className="min-w-[40px]">
+          {!isHomePage && (
+            <Link href="/" className="flex items-center space-x-3">
+              <span className="font-heading self-center text-[2rem] leading-none text-[var(--foreground)] sm:text-[2.2rem]">
+                Евгения Харисова
+              </span>
+            </Link>
+          )}
+        </div>
         
         <div className="flex items-center gap-4">
-          {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center space-x-8">
             <li>
               <Link 
                 href="/" 
-                className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
+                className="text-sm font-medium tracking-[0.02em] text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
               >
                 Главная
               </Link>
@@ -30,7 +36,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/services" 
-                className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
+                className="text-sm font-medium tracking-[0.02em] text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
               >
                 Услуги
               </Link>
@@ -38,7 +44,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/for-whom" 
-                className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
+                className="text-sm font-medium tracking-[0.02em] text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
               >
                 Для клиентов
               </Link>
@@ -46,7 +52,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/contact" 
-                className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
+                className="text-sm font-medium tracking-[0.02em] text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
               >
                 Контакты
               </Link>
@@ -55,10 +61,9 @@ export default function Navbar() {
 
           <ThemeToggle />
           
-          {/* Mobile menu button */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-[var(--primary)] text-[var(--foreground)] hover:bg-[var(--primary)]/10"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-soft)] text-sm text-[var(--foreground)] transition hover:bg-[var(--secondary)] md:hidden focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
             aria-label="Открыть меню"
           >
             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -67,13 +72,12 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         <div className={`${isOpen ? 'block' : 'hidden'} w-full md:hidden mt-4`}>
-          <ul className="flex flex-col p-4 font-medium border border-[var(--primary)]/20 rounded-lg bg-[var(--card-background)]">
+          <ul className="soft-panel flex flex-col rounded-[28px] p-4">
             <li>
               <Link 
                 href="/" 
-                className="block py-2 px-3 text-[var(--foreground)] rounded hover:bg-[var(--primary)]/10"
+                className="block rounded-2xl px-4 py-3 text-[var(--foreground)] hover:bg-[var(--secondary)]"
                 onClick={() => setIsOpen(false)}
               >
                 Главная
@@ -82,7 +86,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/services" 
-                className="block py-2 px-3 text-[var(--foreground)] rounded hover:bg-[var(--primary)]/10"
+                className="block rounded-2xl px-4 py-3 text-[var(--foreground)] hover:bg-[var(--secondary)]"
                 onClick={() => setIsOpen(false)}
               >
                 Услуги
@@ -91,7 +95,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/for-whom" 
-                className="block py-2 px-3 text-[var(--foreground)] rounded hover:bg-[var(--primary)]/10"
+                className="block rounded-2xl px-4 py-3 text-[var(--foreground)] hover:bg-[var(--secondary)]"
                 onClick={() => setIsOpen(false)}
               >
                 Для клиентов
@@ -100,7 +104,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/contact" 
-                className="block py-2 px-3 text-[var(--foreground)] rounded hover:bg-[var(--primary)]/10"
+                className="block rounded-2xl px-4 py-3 text-[var(--foreground)] hover:bg-[var(--secondary)]"
                 onClick={() => setIsOpen(false)}
               >
                 Контакты

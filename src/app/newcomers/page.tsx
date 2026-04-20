@@ -2,22 +2,21 @@ import React from 'react';
 
 export default function Newcomers() {
   return (
-    <div className="min-h-screen pt-20 bg-[var(--background)]">
-      <main className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-[var(--foreground)] mb-6">Информация для новых клиентов</h1>
-          <p className="text-xl text-[var(--foreground)] opacity-80 max-w-2xl mx-auto">
+    <div className="page-shell min-h-screen pt-24">
+      <main className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h1 className="section-title mb-6">Информация для новых клиентов</h1>
+          <p className="section-lead mx-auto max-w-2xl">
             Коротко о том, как проходит первая встреча и что важно знать заранее
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Формат встречи */}
-          <div className="bg-[var(--card-background)] p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[var(--foreground)] mb-4">
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="card">
+            <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
               Формат встречи
             </h2>
-            <div className="space-y-3 text-[var(--foreground)] opacity-80">
+            <div className="text-muted space-y-3 leading-7">
               <p>• Продолжительность первой встречи: 60-90 минут</p>
               <p>• Формат: очно или онлайн (Zoom, WhatsApp)</p>
               <p>• Стоимость первой консультации: 3 500 ₽</p>
@@ -26,12 +25,11 @@ export default function Newcomers() {
             </div>
           </div>
 
-          {/* Что взять с собой */}
-          <div className="bg-[var(--card-background)] p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[var(--foreground)] mb-4">
+          <div className="card">
+            <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
               Что взять с собой
             </h2>
-            <div className="space-y-3 text-[var(--foreground)] opacity-80">
+            <div className="text-muted space-y-3 leading-7">
               <p>• Всё, что поможет вам чувствовать себя спокойнее и свободнее</p>
               <p>• При желании: блокнот для заметок</p>
               <p>• Для очной встречи: удобную одежду</p>
@@ -39,53 +37,51 @@ export default function Newcomers() {
             </div>
           </div>
 
-          {/* Структура первой встречи */}
-          <div className="bg-[var(--card-background)] p-6 rounded-lg shadow-lg md:col-span-2">
-            <h2 className="text-2xl font-semibold text-[var(--foreground)] mb-4">
+          <div className="card md:col-span-2">
+            <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
               Структура первой встречи
             </h2>
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2">
+                <h3 className="font-heading mb-2 text-2xl text-[var(--foreground)]">
                   1. Знакомство (10-15 минут)
                 </h3>
-                <p className="text-[var(--foreground)] opacity-80">
+                <p className="text-muted leading-7">
                   Знакомство, обсуждение формата работы, конфиденциальности и организационных моментов
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2">
+                <h3 className="font-heading mb-2 text-2xl text-[var(--foreground)]">
                   2. Запрос (20-25 минут)
                 </h3>
-                <p className="text-[var(--foreground)] opacity-80">
+                <p className="text-muted leading-7">
                   Обсуждение причины обращения, ваших целей и ожиданий от терапии
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2">
+                <h3 className="font-heading mb-2 text-2xl text-[var(--foreground)]">
                   3. Сбор информации (25-30 минут)
                 </h3>
-                <p className="text-[var(--foreground)] opacity-80">
+                <p className="text-muted leading-7">
                   Более детальный разговор о вашей ситуации и уточняющие вопросы
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2">
+                <h3 className="font-heading mb-2 text-2xl text-[var(--foreground)]">
                   4. Обратная связь (10-15 минут)
                 </h3>
-                <p className="text-[var(--foreground)] opacity-80">
+                <p className="text-muted leading-7">
                   Подведение итогов встречи, первые рекомендации и обсуждение возможного плана дальнейшей работы
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Часто задаваемые вопросы */}
-          <div className="bg-[var(--card-background)] p-6 rounded-lg shadow-lg md:col-span-2">
-            <h2 className="text-2xl font-semibold text-[var(--foreground)] mb-4">
+          <div className="card md:col-span-2">
+            <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
               Частые вопросы первой встречи
             </h2>
-            <div className="space-y-4 text-[var(--foreground)] opacity-80">
+            <div className="text-muted space-y-4 leading-7">
               <p>• Что привело вас к решению обратиться к психологу?</p>
               <p>• Были ли раньше попытки решить эту проблему? Если да, то как?</p>
               <p>• Какие изменения вы хотели бы видеть в результате нашей работы?</p>
