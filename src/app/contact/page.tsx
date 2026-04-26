@@ -4,30 +4,34 @@ export default function Contact() {
   return (
     <div className="page-shell min-h-screen pt-24">
       <main className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="section-title mb-6">
-            Контакты
-          </h1>
-          <p className="section-lead mb-6">
-            Свяжитесь со мной, чтобы записаться на консультацию или уточнить детали.
-          </p>
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-12 max-w-2xl">
+            <h1 className="section-title mb-6">
+              Контакты
+            </h1>
+            <p className="section-lead mb-6">
+              Свяжитесь со мной, чтобы записаться на консультацию или уточнить детали.
+            </p>
 
-        <p className="text-muted mb-12 text-lg leading-8">Приём ведётся только по предварительной записи.</p>  
-          <div className="space-y-8">
-            <div className="card">
-              <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
-                Адрес
-              </h2>
-              <p className="text-muted leading-7">
-                г. Томск, ул. Мокрушина, 9, стр. 16
-              </p>
-            </div>
-            
-            <div className="card">
+            <p className="text-muted text-lg leading-8">Приём ведётся только по предварительной записи.</p>
+          </div>
+
+          <div className="grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr]">
+            <div className="space-y-8">
+              <div className="card">
+                <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
+                  Адрес
+                </h2>
+                <p className="text-muted leading-7">
+                  г. Томск, ул. Мокрушина, 9, стр. 16
+                </p>
+              </div>
+
+              <div className="card">
               <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
                 Контактные данные
               </h2>
-              <div className="space-y-3">
+              <div className="grid gap-3 sm:grid-cols-2">
                 <div className="flex cursor-pointer items-center gap-3 rounded-2xl px-1 py-2 transition hover:bg-[var(--secondary)]/55" onClick={() => {
                   if (navigator?.clipboard) {
                     navigator.clipboard.writeText("+79521639923")
@@ -82,20 +86,37 @@ export default function Contact() {
 
               </div>
             </div>
+            </div>
 
             <div className="card">
               <h2 className="font-heading mb-4 text-4xl leading-none text-[var(--foreground)]">
                 Часы работы
               </h2>
-              <div className="space-y-2">
+              <div className="space-y-5">
+                <div className="space-y-2">
+                  <p className="font-medium text-[var(--foreground)]">
+                    Томск - очно и онлайн
+                  </p>
+                  <p className="text-muted">
+                    Пн-Пт: 10:00-20:00
+                  </p>
+                  <p className="text-muted">
+                    Сб: 11:00-18:00
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <p className="font-medium text-[var(--foreground)]">
+                    Москва - онлайн
+                  </p>
+                  <p className="text-muted">
+                    Пн-Пт: 06:00-16:00
+                  </p>
+                  <p className="text-muted">
+                    Сб: 07:00-14:00
+                  </p>
+                </div>
                 <p className="text-muted">
-                  Пн-Пт: 10:00-20:00
-                </p>
-                <p className="text-muted">
-                  Сб: 11:00-18:00
-                </p>
-                <p className="text-muted">
-                  Вс: Выходной
+                  Вс: выходной
                 </p>
               </div>
             </div>

@@ -1,41 +1,51 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const services = [
   {
     title: "Индивидуальная консультация",
-    description: "Личная встреча, на которой можно спокойно разобрать запрос, лучше понять своё состояние и наметить путь изменений.",
+    description: "Личная встреча, на которой можно спокойно разобрать запрос, лучше понять своё состояние и наметить путь изменений. Подходит, если важно разобраться в тревоге, самооценке, отношениях, последствиях взросления в дисфункциональной семье или повторяющихся жизненных сценариях.",
+    details: [
+      "Работа строится в диалоге: мы исследуем переживания, реакции и устойчивые паттерны.",
+      "По итогам встречи становится понятнее, с чем вы сталкиваетесь и какие шаги могут поддержать изменения."
+    ],
     duration: "60 минут",
-    price: "2 500 ₽",
-    image: "/images/individual-therapy.jpg"
+    price: "2 500 ₽"
+  },
+  {
+    title: "Онлайн индивидуальная консультация",
+    description: "Полноценная психологическая консультация по видеосвязи в удобном формате, если личная встреча сейчас не подходит. Онлайн-встреча сохраняет ту же структуру и глубину работы: можно обсуждать запрос, исследовать чувства и выстраивать план дальнейших шагов.",
+    details: [
+      "Формат удобен для клиентов из других городов и тех, кому важна привычная домашняя обстановка.",
+      "Время можно согласовать по Томску или по Москве, чтобы не пересчитывать часовой пояс самостоятельно."
+    ],
+    duration: "60 минут",
+    price: "2 500 ₽"
   },
   {
     title: "Индивидуальная арт-терапия",
-    description: "Бережный формат работы через творчество, который помогает выразить чувства, снизить напряжение и лучше услышать себя.",
+    description: "Бережный формат работы через творчество, который помогает выразить чувства, снизить напряжение и лучше услышать себя. Подходит, когда сложно говорить о переживаниях напрямую или хочется мягко подойти к теме через образ, цвет, метафору и телесное ощущение.",
+    details: [
+      "Художественные навыки не нужны: важен не результат, а то, что проявляется в процессе.",
+      "Формат помогает заметить внутренние конфликты, потребности и опоры, которые не всегда легко назвать словами."
+    ],
     duration: "60 минут",
-    price: "2 500 ₽",
-    image: "/images/individual-art-therapy.jpg"
+    price: "2 500 ₽"
   },
   {
     title: "Групповая арт-терапия",
-    description: "Совместная практика, где через творчество, поддержку группы и диалог легче проживать эмоции и находить новые смыслы.",
+    description: "Совместная практика, где через творчество, поддержку группы и диалог легче проживать эмоции и находить новые смыслы. В группе можно увидеть, что вы не одиноки в своём опыте, получить бережную обратную связь и попробовать новые способы выражать себя.",
+    details: [
+      "Встречи проходят в безопасном формате с понятной структурой и уважением к личным границам.",
+      "Подходит для мягкой работы с напряжением, самоощущением, отношениями и поиском внутренней опоры."
+    ],
     duration: "80 минут",
-    price: "от 1 500 ₽ с человека",
-    image: "/images/family-therapy.jpg"
-  },
-  {
-    title: "Онлайн консультации",
-    description: "Полноценная психологическая консультация по видеосвязи в удобном формате, если личная встреча сейчас не подходит.",
-    duration: "60 минут",
-    price: "2 500 ₽",
-    image: "/images/online-therapy.jpg"
+    price: "от 1 500 ₽ с человека"
   },
   // {
   //   title: "Групповая терапия",
   //   description: "Терапевтические группы для обмена опытом, получения поддержки и развития социальных навыков.",
   //   duration: "90 минут",
-  //   price: "от 2000₽",
-  //   image: "/images/group-therapy.jpg"
+  //   price: "от 2000₽"
   // },
 ];
 
@@ -49,7 +59,7 @@ export default function Services() {
             Форматы работы, которые помогают бережно разобраться в запросе и подобрать подходящий способ поддержки
           </p>
           <p className="text-muted mx-auto mt-4 max-w-2xl text-base leading-7">
-            В индивидуальной работе основной подход - когнитивно-поведенческая терапия с опорой на ясные цели, наблюдение за мыслями, эмоциями и поведенческими паттернами.
+            В индивидуальной работе основной подход - схемотерапия, современное направление третьей волны КПТ. Она помогает исследовать устойчивые эмоциональные реакции, жизненные паттерны и способы бережно менять их в настоящем.
           </p>
         </div>
 
@@ -57,41 +67,38 @@ export default function Services() {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="card overflow-hidden transition-transform hover:translate-y-[-3px]"
+              className="card flex h-full flex-col transition-transform hover:translate-y-[-3px]"
             >
-              <div className="relative w-full h-[300px]">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-center"
-                  priority={index < 2}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-heading mb-3 text-3xl leading-tight text-[var(--foreground)]">
-                  {service.title}
-                </h3>
-                <p className="text-muted mb-5 leading-7">
+              <h3 className="font-heading mb-4 text-3xl leading-tight text-[var(--foreground)]">
+                {service.title}
+              </h3>
+              <div className="text-muted flex-1 space-y-4 leading-7">
+                <p>
                   {service.description}
                 </p>
-                <div className="flex items-center justify-between gap-4">
-                  <div className="space-y-1">
-                    <p className="text-muted text-sm">
-                      Длительность: {service.duration}
+                <div className="space-y-3">
+                  {service.details.map((detail) => (
+                    <p key={detail}>
+                      {detail}
                     </p>
-                    <p className="text-lg font-semibold text-[var(--primary)]">
-                      {service.price}
-                    </p>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="btn-primary"
-                  >
-                    Записаться
-                  </Link>
+                  ))}
                 </div>
+              </div>
+              <div className="mt-8 flex items-center justify-between gap-4 border-t border-[var(--border-soft)] pt-5">
+                <div className="space-y-1">
+                  <p className="text-muted text-sm">
+                    Длительность: {service.duration}
+                  </p>
+                  <p className="text-lg font-semibold text-[var(--primary)]">
+                    {service.price}
+                  </p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="btn-primary"
+                >
+                  Записаться
+                </Link>
               </div>
             </div>
           ))}

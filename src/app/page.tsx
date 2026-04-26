@@ -16,7 +16,7 @@ export default function Home() {
               </h1>
             </div>
             <p className="section-lead max-w-2xl">
-              Практикующий психолог. Работаю преимущественно в когнитивно-поведенческом подходе и помогаю бережно разобраться в переживаниях, пройти через сложные периоды и восстановить внутреннюю опору.
+              Практикующий психолог. Работаю преимущественно в схемотерапии - современном направлении третьей волны КПТ - и помогаю бережно разобраться в переживаниях, пройти через сложные периоды и восстановить внутреннюю опору.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
@@ -65,7 +65,7 @@ export default function Home() {
             <div className="soft-panel relative h-[500px] overflow-hidden rounded-[36px] p-3 shadow-none md:h-[620px]">
               <div className="relative h-full overflow-hidden rounded-[30px]">
                 <Image
-                  src="/images/psychologist-photo.jpg"
+                  src="/images/MAT_8107.jpg"
                   alt="Евгения Харисова"
                   fill
                   className="object-cover"
