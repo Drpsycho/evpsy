@@ -37,7 +37,6 @@ const services = [
   //   price: "от 2000₽",
   //   image: "/images/group-therapy.jpg"
   // },
-  }
 ];
 
 export default function Services() {
