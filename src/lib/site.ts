@@ -1,6 +1,6 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://evgenia-kharisova.ru";
+  "https://evpsy.ru";
 
 export const site = {
   name: "Евгения Харисова",
