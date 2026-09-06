@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     "психолог онлайн",
     "Евгения Харисова",
     "схема-терапия",
-    "арт-терапия",
     "психологическая консультация",
   ],
   openGraph: {
@@ -93,7 +92,7 @@ const jsonLd = {
   url: site.url,
   image: `${site.url}${site.image}`,
   telephone: site.phone,
-  priceRange: "2500 RUB",
+  priceRange: "3000 RUB",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Томск",
