@@ -1,4 +1,5 @@
 import React from 'react';
+import { consultationPriceLabel } from "@/lib/site";
 
 export default function Newcomers() {
   return (
@@ -19,7 +20,7 @@ export default function Newcomers() {
             <div className="text-muted space-y-3 leading-7">
               <p>• Продолжительность первой встречи: 60-90 минут</p>
               <p>• Формат: очно в Томске или онлайн (Zoom, WhatsApp)</p>
-              <p>• Стоимость первой консультации: 3 500 ₽</p>
+              <p>• Стоимость первой консультации: {consultationPriceLabel}</p>
               <p>• Основной подход: схема-терапия, направление третьей волны КПТ</p>
               <p>• Оплата: наличные или перевод на карту</p>
             </div>

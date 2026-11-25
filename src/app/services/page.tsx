@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { consultationPriceLabel } from "@/lib/site";
 
 const services = [
   {
@@ -8,8 +9,7 @@ const services = [
       "Мы вместе разбираем ваш запрос, замечаем привычные реакции и ищем, что может помочь именно вам.",
       "После встречи обычно становится понятнее, с чем вы столкнулись и какой следующий шаг будет самым бережным."
     ],
-    duration: "60 минут",
-    price: "3 000 ₽"
+    duration: "60 минут"
   },
   {
     title: "Онлайн индивидуальная консультация",
@@ -18,8 +18,7 @@ const services = [
       "Для встречи достаточно тихого места, интернета и часа времени, когда вас не будут отвлекать.",
       "Время можно согласовать по Томску или по Москве, чтобы не мучиться с пересчётом часовых поясов."
     ],
-    duration: "60 минут",
-    price: "3 000 ₽"
+    duration: "60 минут"
   }
 ];
 
@@ -54,7 +53,7 @@ export default function Services() {
                     Длительность: {service.duration}
                   </p>
                   <p className="text-lg font-semibold text-[var(--primary)]">
-                    {service.price}
+                    {consultationPriceLabel}
                   </p>
                 </div>
                 <Link

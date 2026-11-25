@@ -1,0 +1,110 @@
+.wheel {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1;
+  container-type: inline-size;
+}
+
+.sector {
+  position: absolute;
+  inset: 0;
+  color: #2c3834;
+  background: var(--sector-color);
+  transition: background-color 160ms ease;
+}
+
+.sector:hover,
+.sector:focus-visible {
+  background: color-mix(in srgb, var(--sector-color) 72%, white);
+}
+
+.sector[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--sector-color) 80%, #51424f);
+  color: #19261f;
+}
+
+.label {
+  position: absolute;
+  left: var(--label-x);
+  top: var(--label-y);
+  transform: translate(-50%, -50%);
+  padding: 3px 2px;
+  border-radius: 5px;
+  font-size: clamp(0.6875rem, 3.7cqi, 1.0625rem);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.sector[aria-pressed="true"] .label {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 2px;
+}
+
+.sector:focus-visible .label {
+  outline: 2px solid currentColor;
+  outline-offset: -1px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-content: center;
+  width: 27%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-heading), serif;
+  font-size: clamp(0.9375rem, 5.5cqi, 1.625rem);
+  font-weight: 600;
+  line-height: 0.95;
+  text-align: center;
+}
+
+.choice {
+  display: inline-flex;
+  min-height: 44px;
+  min-width: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 0.875rem;
+}
+
+.rating {
+  cursor: pointer;
+}
+
+.choice:hover {
+  border-color: var(--accent);
+}
+
+.choice[aria-pressed="true"],
+.rating input:checked + .choice {
+  border-color: var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.choice:focus-visible,
+.rating input:focus-visible + .choice {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sector {
+    transition: none;
+  }
+}

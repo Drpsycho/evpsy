@@ -2,6 +2,9 @@ export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://evpsy.ru";
 
+export const consultationPriceRub = 3000;
+export const consultationPriceLabel = `${consultationPriceRub.toLocaleString("ru-RU")} ₽`;
+
 export const site = {
   name: "Евгения Харисова",
   title: "Евгения Харисова - психолог в Томске и онлайн",

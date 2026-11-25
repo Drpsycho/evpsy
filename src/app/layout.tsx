@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { site } from "@/lib/site";
+import { consultationPriceRub, site } from "@/lib/site";
 
 const headingFont = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
@@ -92,7 +92,7 @@ const jsonLd = {
   url: site.url,
   image: `${site.url}${site.image}`,
   telephone: site.phone,
-  priceRange: "3000 RUB",
+  priceRange: `${consultationPriceRub} RUB`,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Томск",
